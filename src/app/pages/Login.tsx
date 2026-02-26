@@ -21,14 +21,19 @@ export function Login() {
       return;
     }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    const success = login(email, password);
-    if (success) {
-      navigate('/dashboard');
-    } else {
-      setError('Invalid credentials. Please try again.');
+    try {
+      const success = await login(email, password);
+      if (success) {
+        navigate('/dashboard');
+      } else {
+        setError('Invalid credentials. Please try again.');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('Login failed. Please try again.');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

@@ -33,10 +33,16 @@ export function Register() {
     }
     setErrors({});
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    register(form.name, form.email, form.phone, form.password);
-    navigate('/dashboard');
-    setLoading(false);
+    try {
+      const success = await register(form.name, form.email, form.phone, form.password);
+      if (success) {
+        navigate('/dashboard');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (key: string, value: string) => {
