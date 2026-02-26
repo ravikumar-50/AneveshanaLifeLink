@@ -64,7 +64,7 @@ export function Register() {
           value={value}
           onChange={(e) => handleChange(name, e.target.value)}
           placeholder={placeholder}
-          className={`w-full pl-11 ${name === 'password' ? 'pr-12' : 'pr-4'} py-3 border rounded-xl text-gray-900 bg-gray-50 focus:outline-none transition-all text-sm placeholder:text-gray-400 ${errors[name] ? 'border-red-400 bg-red-50' : 'border-gray-200'}`}
+          className={`w-full pl-11 ${name === 'password' ? 'pr-12' : 'pr-4'} py-3 border rounded-xl text-gray-900 bg-gray-50 focus:outline-none transition-all text-sm placeholder:text-gray-400 cursor-text ${errors[name] ? 'border-red-400 bg-red-50' : 'border-gray-200'}`}
           onFocus={(e) => !errors[name] && (e.target.style.borderColor = '#E53935')}
           onBlur={(e) => !errors[name] && (e.target.style.borderColor = '#E5E7EB')}
         />
@@ -72,7 +72,7 @@ export function Register() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
           >
             {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
           </button>
@@ -137,7 +137,7 @@ export function Register() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-60 flex items-center justify-center gap-2 mt-2"
+                className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2 mt-2"
                 style={{ backgroundColor: '#1E3A8A', boxShadow: '0 4px 15px rgba(30,58,138,0.3)' }}
               >
                 {loading ? (
@@ -159,7 +159,7 @@ export function Register() {
 
             <Link
               to="/login"
-              className="block w-full py-3 rounded-xl text-center font-semibold text-sm border-2 transition-all hover:bg-gray-50"
+              className="block w-full py-3 rounded-xl text-center font-semibold text-sm border-2 transition-all hover:bg-gray-50 cursor-pointer"
               style={{ color: '#E53935', borderColor: '#E53935' }}
             >
               Login to LifeLink

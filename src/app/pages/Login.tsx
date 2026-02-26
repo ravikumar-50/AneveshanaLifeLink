@@ -95,7 +95,7 @@ export function Login() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:border-transparent transition-all text-sm placeholder:text-gray-400"
+                    className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:border-transparent transition-all text-sm placeholder:text-gray-400 cursor-text"
                     style={{ '--tw-ring-color': '#E53935' } as any}
                     onFocus={(e) => e.target.style.borderColor = '#E53935'}
                     onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
@@ -113,14 +113,14 @@ export function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
-                    className="w-full pl-11 pr-12 py-3 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none transition-all text-sm placeholder:text-gray-400"
+                    className="w-full pl-11 pr-12 py-3 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none transition-all text-sm placeholder:text-gray-400 cursor-text"
                     onFocus={(e) => e.target.style.borderColor = '#E53935'}
                     onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -129,7 +129,7 @@ export function Login() {
 
               {/* Forgot Password */}
               <div className="text-right">
-                <button type="button" className="text-sm font-medium" style={{ color: '#E53935' }}>
+                <button type="button" className="text-sm font-medium cursor-pointer" style={{ color: '#E53935' }}>
                   Forgot password?
                 </button>
               </div>
@@ -138,7 +138,7 @@ export function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-60 flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl text-white font-bold text-base transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
                 style={{ backgroundColor: '#E53935', boxShadow: '0 4px 15px rgba(229,57,53,0.3)' }}
               >
                 {loading ? (
@@ -162,7 +162,7 @@ export function Login() {
             {/* Register Link */}
             <p className="text-center text-sm text-gray-600">
               Don't have an account?{' '}
-              <Link to="/register" className="font-bold hover:underline" style={{ color: '#1E3A8A' }}>
+              <Link to="/register" className="font-bold hover:underline cursor-pointer" style={{ color: '#1E3A8A' }}>
                 Create Account
               </Link>
             </p>
